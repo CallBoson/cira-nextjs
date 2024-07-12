@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ShimmerButton from "../ShimmerButton";
 import { FaGithub } from "react-icons/fa";
