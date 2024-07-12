@@ -7,11 +7,14 @@ import Main from "./components/Main/Main";
 
 export default function Home() {
   return (
-    <main className="flex-none fixed left-0 top-0 h-screen w-full">
-      <Spline scene="https://prod.spline.design/n8IBG1sTVWBPkWiU/scene.splinecode" />
+    <main>
+      <Spline
+        scene="https://prod.spline.design/k17mzYq2EHsMIqB8/scene.splinecode"
+        className="fixed left-0 top-0 z-0"
+      />
 
-      <div className="custom-width fixed top-0 left-1/2 -translate-x-1/2">
-        <div className="mt-36 flex flex-col items-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 custom-width">
+        <div className="mt-24 flex flex-col items-center">
           <AnimatedGradientText className="text-lg">
             🎉
             <span

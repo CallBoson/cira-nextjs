@@ -22,14 +22,14 @@ export default function Main() {
           size="lg"
           className="bg-gradient-to-tr from-pink-500 to-yellow-500 shadow-lg rounded-full"
         >
-          Try me
+          Get Touch
         </Button>
       </div>
 
       <AnimatePresence>
         <Modal isOpen={isOpen}>
           <div
-            className="absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,.2)] flex justify-center items-center"
+            className="fixed left-0 top-0 w-full h-full bg-[rgba(0,0,0,.2)] flex justify-center items-center"
             onClick={handleClickMask}
           >
             <motion.div

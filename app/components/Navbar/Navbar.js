@@ -2,6 +2,7 @@
 import Image from "next/image";
 import ShimmerButton from "../ShimmerButton";
 import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 export function Navbar() {
   return (
@@ -18,12 +19,14 @@ export function Navbar() {
           }}
         />
 
-        <ShimmerButton className="shadow-2xl flex items-center">
-          <FaGithub className="text-2xl text-white mr-2" />
-          <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-            Source Code
-          </span>
-        </ShimmerButton>
+        <Link href="https://github.com/CallBoson/cira-nextjs">
+          <ShimmerButton className="shadow-2xl flex items-center">
+            <FaGithub className="text-2xl text-white mr-2" />
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
+              Source Code
+            </span>
+          </ShimmerButton>
+        </Link>
       </div>
     </nav>
   );
