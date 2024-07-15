@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MagicCard } from "./MagicCard";
 import { Button } from "@nextui-org/react";
 import { BsStars } from "react-icons/bs";
+import ModalContent from "./ModalContent";
 
 export default function Main() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -29,13 +30,13 @@ export default function Main() {
       <AnimatePresence>
         <Modal isOpen={isOpen}>
           <div
-            className="fixed left-0 top-0 w-full h-full bg-[rgba(0,0,0,.2)] flex justify-center items-center"
+            className="fixed left-0 top-0 w-full h-full bg-[rgba(0,0,0,.2)] flex justify-center items-center z-20"
             onClick={handleClickMask}
           >
             <motion.div
               className=" bg-[rgb(13,13,13)] backdrop-blur-xl rounded-xl"
               onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.8, opacity: 0, y: 100 }}
+              initial={{ scale: 0.8, opacity: 0, y: 200 }}
               animate={{
                 scale: 1,
                 opacity: 1,
@@ -45,7 +46,7 @@ export default function Main() {
               exit={{
                 scale: 0.5,
                 opacity: 0,
-                y: 50,
+                y: 200,
                 transition: { duration: 0.3 },
               }}
             >
@@ -53,11 +54,12 @@ export default function Main() {
                 gradientColor="#262626"
                 className="border border-[rgba(255,255,255,.1)]"
               >
-                <div className="relative w-[800px] h-[600px]">
+                <div className="relative lg:w-[800px] w-[90vw] h-[600px]">
                   <img
                     src="https://web.clay.earth/assets/gradient_bg-6c96905f.png"
-                    className="absolute inset-0 left-0 top-1/2 -translate-y-1/2 w-full h-full blur-md saturate-150 opacity-[.65]"
+                    className="absolute inset-0 left-0 top-1/2 -translate-y-1/2 w-full h-full blur-md saturate-150 opacity-[.65] z-[-1]"
                   />
+                  <ModalContent onClose={() => onOpenChange(false)} />
                 </div>
               </MagicCard>
             </motion.div>

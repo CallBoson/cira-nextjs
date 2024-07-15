@@ -25,8 +25,14 @@ export default function Home() {
               Made with Magic UI
             </span>
           </AnimatedGradientText>
-          <SparklesText text="Chat better with" className="mt-4" />
-          <SparklesText text="GlobalChatPro" className="mt-4" />
+          <SparklesText
+            text="Chat better with"
+            className="mt-4 sm:text-6xl text-4xl"
+          />
+          <SparklesText
+            text="GlobalChatPro"
+            className="mt-4 sm:text-6xl text-4xl"
+          />
         </div>
       </div>
 
