@@ -1,7 +1,6 @@
-import { memo } from "react";
 import Responsive from "../Responsive";
 
-const Sider = memo(() => {
+const Sider = () => {
   return (
     <Responsive
       Mobile={<SiderMobile />}
@@ -9,7 +8,7 @@ const Sider = memo(() => {
       breakpoint="md"
     />
   );
-});
+};
 
 const SiderDesktop = () => {
   return (

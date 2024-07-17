@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MagicCard } from "./MagicCard";
 import { Button } from "@nextui-org/react";
 import { BsStars } from "react-icons/bs";
-import ModalContent from "./ModalContent";
+import ModalContent from "./ModalContent/ModalContent";
 
 export default function Main() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();

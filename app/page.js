@@ -1,6 +1,6 @@
 import Spline from "@splinetool/react-spline";
 
-import { cn } from "./lib/utils";
+import { cn } from "./libs/utils";
 import AnimatedGradientText from "./components/AnimatedGradientText";
 import SparklesText from "./components/SparklesText";
 import Main from "./components/Main/Main";
