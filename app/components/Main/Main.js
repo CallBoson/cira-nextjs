@@ -1,17 +1,18 @@
 "use client";
 
-import { Modal, useDisclosure } from "@nextui-org/modal";
+import { Modal } from "@nextui-org/modal";
 import { motion, AnimatePresence } from "framer-motion";
 import { MagicCard } from "./MagicCard";
 import { Button } from "@nextui-org/react";
 import { BsStars } from "react-icons/bs";
 import ModalContent from "./ModalContent/ModalContent";
+import { useModalStore } from "./zustand/useModal";
 
 export default function Main() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useModalStore();
 
   const handleClickMask = () => {
-    onOpenChange(false);
+    onClose();
   };
 
   return (
@@ -59,7 +60,7 @@ export default function Main() {
                     src="https://web.clay.earth/assets/gradient_bg-6c96905f.png"
                     className="absolute inset-0 left-0 top-1/2 -translate-y-1/2 w-full h-full blur-md saturate-150 opacity-[.65] z-[-1]"
                   />
-                  <ModalContent onClose={() => onOpenChange(false)} />
+                  <ModalContent />
                 </div>
               </MagicCard>
             </motion.div>

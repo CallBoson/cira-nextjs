@@ -1,24 +1,12 @@
-import OpenAI from "openai";
-
-const client = new OpenAI({
-  apiKey: process.env.MOONSHOT_API_KEY,
-  baseURL: "https://api.moonshot.cn/v1",
-});
+import { Completion } from "../../libs/llm";
 
 export async function POST(req) {
   const { description, chats, prompt } = await req.json();
 
-  const completion = await client.chat.completions.create({
-    model: "moonshot-v1-8k",
-    messages: [
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-  });
-
-  const text = completion.choices[0].message.content;
+  const completion = new Completion();
+  completion.addUser(prompt);
+  console.log(completion);
+  const text = await completion.create();
 
   return Response.json({
     text,
