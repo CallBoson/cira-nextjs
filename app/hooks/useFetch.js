@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+
 export async function fetcher({ url, method, body }) {
   const res = await fetch(url, {
     method: method,
@@ -16,23 +17,31 @@ export function useFetch({ url, method = "POST", body, fetchOnMount = true }) {
   const [error, setError] = useState(null);
   const controller = new AbortController();
   const signal = controller.signal;
+  const bodyRef = useRef(body);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetcher({ url, method, body });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  const fetchData = useCallback(
+    async (newBody) => {
+      setLoading(true);
+      setError(null);
+      if (newBody !== undefined) {
+        bodyRef.current = newBody; // 更新存储的请求体
       }
-      const json = await response.json();
-      setData(json);
-    } catch (e) {
-      setError(e.message);
-    } finally {
-      setLoading(false);
-    }
-  }, [url, method, body, signal]);
+      try {
+        const response = await fetcher({ url, method, body: bodyRef.current });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const json = await response.json();
+        setData(json);
+        return json;
+      } catch (e) {
+        setError(e.message);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [url, method, signal]
+  );
 
   useEffect(() => {
     if (fetchOnMount) {

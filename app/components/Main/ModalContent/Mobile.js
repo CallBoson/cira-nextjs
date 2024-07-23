@@ -1,4 +1,4 @@
-import Sider from "../Sider";
+import Sider from "../Sider/Sider";
 import ChatContent from "./ChatContent/ChatContent";
 
 const Mobile = () => {

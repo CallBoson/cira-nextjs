@@ -1,0 +1,30 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+  <defs>
+    <linearGradient x1="0" y1="-34%" x2="94%" y2="100%" id="AIFlowerFillGrad1">
+      <stop stop-color="#7CEBC4" offset="0%"></stop>
+      <stop stop-color="#7DB1FA" offset="47%"></stop>
+      <stop stop-color="#884BFA" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="AIFlowerStrokeGrad1">
+      <stop stop-color="#fff" offset="0%"></stop>
+      <stop stop-color="#000" stop-opacity="0.16" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="-327%" y1="-416%" x2="1498%" y2="279%" id="AIFlowerFillGrad2">
+      <stop stop-color="#88FAD2" offset="0%"></stop>
+      <stop stop-color="#80B5FF" offset="29%"></stop>
+      <stop stop-color="#8B4CFF" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="AIFlowerStrokeGrad2">
+      <stop stop-color="#000" stop-opacity="0" offset="0%"></stop>
+      <stop stop-color="#fff" stop-opacity="0.5" offset="100%"></stop>
+    </linearGradient>
+    <mask id="AIFlowerMask">
+      <rect x="13" y="12" width="20" height="20" fill="white"></rect>
+      <circle cx="23" cy="22" r="3" fill="black"></circle>
+    </mask>
+  </defs>
+  <g transform="translate(-13, -12)" mask="url(#AIFlowerMask)">
+    <path d="M23,12.3 C24.1,12.3 25.1,12.7 25.9,13.4 C26.6,14.1 27.1,15.1 27.3,16.2 C28.6,16.2 29.7,16.4 30.6,16.9 C31.5,17.4 32.2,18.3 32.5,19.4 C32.9,20.5 32.8,21.6 32.4,22.5 C31.9,23.5 31.2,24.3 30.2,24.8 C30.6,26.1 30.8,27.2 30.6,28.3 C30.4,29.3 29.8,30.2 28.9,30.9 C28,31.6 26.9,31.8 25.9,31.7 C24.9,31.6 23.9,31.1 23.2,30.3 C22.1,31.1 21.1,31.6 20.1,31.7 C19.1,31.8 18,31.6 17.1,30.9 C16.2,30.2 15.6,29.3 15.4,28.3 C15.2,27.2 15.4,26.1 15.9,25.1 C14.8,24.3 14.1,23.5 13.6,22.5 C13.2,21.6 13.1,20.5 13.5,19.4 C13.8,18.3 14.5,17.4 15.4,16.9 C16.3,16.4 17.4,16.2 18.4,16.4 C18.9,15.1 19.4,14.1 20.1,13.4 C20.9,12.7 21.9,12.3 23,12.3 Z" stroke="url(#AIFlowerStrokeGrad1)" stroke-width="0.5" fill="url(#AIFlowerFillGrad1)"></path><path d="M3.1,0 C5.5,0.4 7.3,2.2 7.3,4.4 C7.3,4.5 7.3,4.6 7.3,4.7 C4.9,4.4 3.1,2.6 3.1,0.4 C3.1,0.3 3.1,0.2 3.1,0.2 Z M4.4,6.2 C5.2,6.2 6,6.4 6.7,6.7 C5.8,8 4.1,9 2.2,9 C1.4,9 0.7,8.8 0,8.5 C0.9,7.2 2.5,6.2 4.4,6.2 Z M8,7.5 C9,8.3 9.6,9.5 9.6,10.7 C9.6,12 9,13.2 8,14 C7,13.2 6.4,12 6.4,10.7 C6.4,9.5 7,8.4 7.9,7.6 Z M12.9,0 C12.9,0.1 12.9,0.2 12.9,0.4 C12.9,2.6 11.1,4.4 8.7,4.7 C8.7,4.6 8.7,4.5 8.7,4.4 C8.7,2.2 10.5,0.4 12.9,0 Z M11.6,6.2 C13.5,6.2 15.1,7.2 16,8.5 C15.3,8.8 14.6,9 13.8,9 C11.9,9 10.2,8 9.3,6.7 C10,6.4 10.8,6.2 11.6,6.2 Z" opacity="0.36" transform="translate(15, 16)" fill="#fff"></path>
+    <circle stroke="url(#AIFlowerStrokeGrad2)" stroke-width="0.5" fill-opacity="0.12" fill="url(#AIFlowerFillGrad2)" cx="23" cy="22" r="3.25"></circle>
+  </g>
+</svg>
