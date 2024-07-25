@@ -3,26 +3,30 @@
 该项目正在开发中
 
 体验地址：[http://global.jiabao.online/](http://global.jiabao.online/)
+![首屏](doc/image.png)
+![使用界面](doc/image2.png)
 
 ## 简介
 
-使用者通过描述对话情景，并自定义对话人和对话内容，然后告诉 bot 希望如何回答（例如语气、正式程度等），最后告诉 bot 希望以什么语言输出，就可以得到该语言最合适的回答。
-
-> 使用场景：做外贸，以更合适的句子与客人交流；与外国友人交流，以更流畅的句子表达自己的想法；
+使用场景：做外贸，以更合适的句子与客人交流；与外国友人交流，以更流畅的句子表达自己的想法；
 
 ## 技术栈
 
 - Next.js
 - Tailwind CSS
 - NextUI
-- MagicUI
-- Framer Motion
-- Spline Design
-- AI 工作流(暂定 Coze 扣子)
+- Moonshot AI（后期可加入工作流）
 
-## Getting Started
+## 前提准备
 
-First, run the development server:
+- 打开根目录下`.env.example`，进入[moonshot 官网](https://platform.moonshot.cn/console/api-keys)，创建 API Key，替换`MOONSHOT_API_KEY`字段.
+- Node 版本不低于 18
+
+## 运行
+
+```bash
+npm run install
+```
 
 ```bash
 npm run dev
@@ -35,3 +39,9 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 部署
+
+```bash
+npm run build
+```
