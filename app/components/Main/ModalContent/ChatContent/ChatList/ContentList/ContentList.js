@@ -2,9 +2,10 @@ import useChatListStore from "../../../../zustand/useChatList";
 import { MdEdit } from "react-icons/md";
 import { memo, useState } from "react";
 import { Button } from "@nextui-org/react";
+import Loader from "./Loader/Loader";
 
 export default memo(function ContentList() {
-  const { getChatContentList, removeChatContent, handleGenerate } =
+  const { getChatContentList, removeChatContent, handleGenerate, isLoading } =
     useChatListStore();
   const contentList = getChatContentList();
 
@@ -49,6 +50,7 @@ export default memo(function ContentList() {
           )}
         </div>
       ))}
+      {isLoading && <Loader className="ml-2" />}
     </div>
   );
 });
