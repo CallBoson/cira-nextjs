@@ -17,8 +17,8 @@ const ChatContent = () => {
 
   return (
     <div className="flex flex-col flex-1 p-4 pt-2">
-      <div className="h-14 flex items-center justify-between">
-        <Input placeholder="如有对话背景可在此输入" />
+      <div className="h-14 flex items-center justify-end">
+        {/* <Input placeholder="如有对话背景可在此输入" /> */}
         <IoClose
           className="text-2xl cursor-pointer ml-2 transition hover:rotate-90 md:block hidden"
           onClick={onClose}
