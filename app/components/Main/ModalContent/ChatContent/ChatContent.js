@@ -2,51 +2,17 @@ import { IoClose } from "react-icons/io5";
 import { Input } from "@nextui-org/react";
 import ChatList from "./ChatList/ChatList";
 import { memo, useState } from "react";
-import { useFetch } from "../../../../hooks/useFetch";
 import { useModalStore } from "../../zustand/useModal";
 import useChatListStore from "../../zustand/useChatList";
 
 const ChatContent = () => {
   const { onClose } = useModalStore();
-  const {
-    currentChatId,
-    setCurrentChatById,
-    addChat,
-    addChatContent,
-    getChatContentList,
-    getChatPresetList,
-  } = useChatListStore();
+  const { isLoading, handleGenerate: handleSubmitChat } = useChatListStore();
   const [prompt, setPrompt] = useState("");
 
-  const { isLoading, mutate } = useFetch({
-    url: "/api/generate",
-    fetchOnMount: false,
-  });
-
-  const handleSubmit = async () => {
-    if (!prompt || isLoading) return;
-
-    if (!currentChatId) {
-      const newChatId = addChat();
-      setCurrentChatById({ chatId: newChatId });
-    }
-
-    addChatContent({
-      content: prompt,
-      isSelf: true,
-    });
-
+  const handleSubmit = () => {
+    handleSubmitChat(prompt);
     setPrompt("");
-
-    const { content } = await mutate({
-      presetList: getChatPresetList(),
-      contentList: getChatContentList(),
-    });
-
-    addChatContent({
-      content,
-      isSelf: false,
-    });
   };
 
   return (

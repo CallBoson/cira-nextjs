@@ -1,9 +1,11 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { fetcher } from "../../../hooks/useFetch";
 
 const chatStore = (set, get) => ({
   chatList: [],
   currentChatId: null,
+  isLoading: false,
 
   setCurrentChatById: ({ chatId } = {}) => set({ currentChatId: chatId }),
 
@@ -92,6 +94,47 @@ const chatStore = (set, get) => ({
           : chat
       ),
     }));
+  },
+
+  handleGenerate: async (prompt) => {
+    const {
+      isLoading,
+      currentChatId,
+      addChat,
+      setCurrentChatById,
+      addChatContent,
+      getChatPresetList,
+      getChatContentList,
+    } = get();
+
+    if (!prompt || isLoading) return;
+
+    if (!currentChatId) {
+      const newChatId = addChat();
+      setCurrentChatById({ chatId: newChatId });
+    }
+
+    addChatContent({
+      content: prompt,
+      isSelf: true,
+    });
+
+    set({ isLoading: true });
+
+    const { content } = await fetcher({
+      url: "/api/generate",
+      body: {
+        presetList: getChatPresetList(),
+        contentList: getChatContentList(),
+      },
+    })
+      .then((res) => res.json())
+      .finally(() => set({ isLoading: false }));
+
+    addChatContent({
+      content,
+      isSelf: false,
+    });
   },
 });
 

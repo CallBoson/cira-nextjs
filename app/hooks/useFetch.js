@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
-export async function fetcher({ url, method, body }) {
+export async function fetcher({ url, method = "POST", body }) {
   const res = await fetch(url, {
     method: method,
     headers: {
